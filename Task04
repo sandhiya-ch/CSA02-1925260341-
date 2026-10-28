@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+
+#define RUPEES_TO_PAISE(r) ((r) * 100L)
+#define SQUARE(x) ((x) * (x))
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+
+static inline int square(int x) {
+    return x * x;
+}
+
+static inline int maximum(int a, int b) {
+    return a > b ? a : b;
+}
+
+int main(void) {
+    int a = 5, b = 8;
+
+    printf("500 rupees in paise = %ld\n",
+           RUPEES_TO_PAISE(500));
+    printf("Square of a+1 = %d\n", SQUARE(a + 1));
+    printf("Maximum = %d\n", MAX(a, b));
+    printf("Inline square = %d\n", square(a));
+    printf("Inline maximum = %d\n", maximum(a, b));
+
+    return 0;
+}
