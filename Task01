@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+
+int main(void) {
+    unsigned int household;
+    unsigned int previous, current, units;
+    char category;
+
+    printf("Enter household number: ");
+    if (scanf("%u", &household) != 1) return 1;
+
+    printf("Enter category (D/A): ");
+    if (scanf(" %c", &category) != 1) return 1;
+
+    printf("Enter previous reading: ");
+    if (scanf("%u", &previous) != 1) return 1;
+
+    printf("Enter current reading: ");
+    if (scanf("%u", &current) != 1) return 1;
+
+    units = (current - previous) & 65535U;
+
+    printf("\nHousehold: %u\n", household);
+    printf("Category: %c\n", category);
+    printf("Units consumed: %u\n", units);
+
+    return 0;
+}
